@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Database VinzXyz — Panel</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="bg"></div>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <div class="logo">DK</div>
+      <div class="brand-text">
+        <span class="brand-title">Database Shadow</span>
+        <span class="brand-sub">Control Panel</span>
+      </div>
+      <button class="close-btn" id="closeSidebar">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <nav class="menu">
+      <button class="menu-item active" data-target="dashboard"><i class="fa-solid fa-gauge-high"></i>Dashboard</button>
+      <button class="menu-item" data-target="add"><i class="fa-solid fa-plus"></i>Add Token</button>
+      <button class="menu-item" data-target="list"><i class="fa-solid fa-list-ul"></i>List Token</button>
+      <button class="menu-item" data-target="manage"><i class="fa-solid fa-user-gear"></i>Manage Account</button>
+    </nav>
+
+    <div class="sidebar-footer">
+      <span class="foot-hint">Shadow database Web V1.0</span>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <button class="hamburger" id="openSidebar">
+        <i class="fa-solid fa-bars-staggered"></i>
+      </button>
+      <h1 class="title">Database Shadow</h1>
+      <span id="clock" class="clock"></span>
+    </header>
+
+    <section class="content">
+      <section id="dashboard" class="page page-active">
+        <div class="cards">
+          <div class="card"><div class="card-head"><i class="fa-solid fa-key"></i><h3>Total Token</h3></div><div class="card-value" id="totalTokens">0</div></div>
+          <div class="card"><div class="card-head"><i class="fa-solid fa-shield-halved"></i><h3>Status</h3></div><div class="card-value small">Secure • GitHub Mode</div></div>
+          <div class="card"><div class="card-head"><i class="fa-solid fa-user"></i><h3>Pengguna</h3></div><div class="card-value" id="currentUser">admin</div></div>
+        </div>
+      </section>
+
+      <section id="add" class="page">
+        <div class="card block">
+          <h2><i class="fa-solid fa-plus"></i> Tambah Token</h2>
+          <form id="addForm" class="form-row">
+            <input type="text" id="tokenInput" class="input" placeholder="Masukkan token baru..." required />
+            <button type="submit" class="btn primary"><i class="fa-solid fa-paper-plane"></i> Tambah</button>
+          </form>
+        </div>
+      </section>
+
+      <section id="list" class="page">
+        <div class="card block">
+          <div class="list-head">
+            <h2><i class="fa-solid fa-list-ul"></i> Daftar Token</h2>
+          </div>
+          <ul id="tokenList" class="token-list"></ul>
+          <div class="empty" id="emptyState">
+            <i class="fa-regular fa-folder-open"></i>
+            <p>Belum ada token.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="manage" class="page">
+        <div class="card block">
+          <h2><i class="fa-solid fa-user-gear"></i> Manage Account</h2>
+          <p>Masih tahap pengembangan.</p>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
